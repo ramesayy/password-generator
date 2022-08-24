@@ -1,3 +1,5 @@
+//Created variables for our elements from the html file
+
 const pw = document.getElementById("pw");
 const copy = document.getElementById("copy");
 const length = document.getElementById("length");
@@ -7,10 +9,14 @@ const number = document.getElementById("number");
 const symbol = document.getElementById("symbol");
 const generate = document.getElementById("generate");
 
+//Added the characters from which the password will be created
+
 const upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowerLetters = "abcdefghijklmnopqrstuvwxyz";
 const numbers = "0123456789";
 const symbols = "!@#$%^&*()_+={}[]\|;'<>,.?";
+
+//Added functions for each category of characters in order to select them randomly
 
 function getLowercase() {
     return lowerLetters[Math.floor(Math.random() * lowerLetters.length)];
@@ -27,6 +33,8 @@ function getNumber() {
 function getSymbol() {
     return symbols[Math.floor(Math.random() * symbols.length)];
 }
+
+//Generate the password according to users' preference
 
 function generatePassword() {
     const len = length.value;
@@ -79,6 +87,8 @@ function generateX() {
 
     return xs[Math.floor(Math.random() * xs.length)];
 }
+
+//Connect a frontend displayed button with the a backend function ("generate password"  button with its function)
 
 generate.addEventListener("click", generatePassword);
 
